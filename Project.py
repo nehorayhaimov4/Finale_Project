@@ -71,6 +71,7 @@ def check_winner(board, mark):
     target = [mark, mark, mark]
     return target in lines
 
+
 # Step 3.4: Check if the board is full
 def is_board_full(board):
     """
@@ -81,6 +82,7 @@ def is_board_full(board):
             return False
     return True
 
+
 # Play again?
 def ask_play_again():
     """
@@ -88,11 +90,12 @@ def ask_play_again():
     """
     while True:
         choice = input("Do you want to play again? (yes/no): ").strip().lower()
-        if choice in ['yes', 'y']:
+        if choice in ['yes']:
             return True
-        if choice in ['no', 'n']:
+        if choice in ['no']:
             return False
         print("Invalid input! Please type 'yes' or 'no'.")
+
 
 # Play
 def play_round():
