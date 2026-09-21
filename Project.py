@@ -54,17 +54,17 @@ def check_winner(board, mark):
     """
     Checks all 8 possible lines. Returns True if the mark won, otherwise False.
     """
-    # 1. Check Rows
+    # Check Rows
     for row in board:
         if all(cell == mark for cell in row):
             return True
 
-    # 2. Check Columns
+    # Check Columns
     for col in range(3):
         if all(board[row][col] == mark for row in range(3)):
             return True
 
-    # 3. Check Diagonals
+    # Check Diagonals
     if all(board[i][i] == mark for i in range(3)):
         return True
     if all(board[i][2 - i] == mark for i in range(3)):
