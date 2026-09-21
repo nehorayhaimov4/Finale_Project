@@ -71,6 +71,7 @@ def check_winner(board, mark):
         return True
 
     return False
+
 # Stage 3.4: Check if the board is full
 def is_board_full(board):
     """
@@ -89,9 +90,9 @@ def ask_play_again():
     """
     while True:
         choice = input("Do you want to play again? (yes/no): ").strip().lower()
-        if choice in ['yes']:
+        if choice == 'yes':
             return True
-        if choice in ['no']:
+        if choice == 'no':
             return False
         print("Invalid input! Please type 'yes' or 'no'.")
 
@@ -106,7 +107,7 @@ def play_round():
         get_move(board, "X")
         print_board(board)
 
-        if check_winner(board, "X") == "win" or check_winner(board, "X") is True:
+        if check_winner(board, "X"):
             print("Player X wins!")
             break
         if is_board_full(board):
@@ -117,7 +118,7 @@ def play_round():
         get_move(board, "O")
         print_board(board)
 
-        if check_winner(board, "O") == "win" or check_winner(board, "O") is True:
+        if check_winner(board, "O"):
             print("Player O wins!")
             break
         if is_board_full(board):
