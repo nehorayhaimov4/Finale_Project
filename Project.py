@@ -1,6 +1,8 @@
 # START
 
+
 # Stage 1: Creating the board
+
 def init_board():
     """
     Builds a fresh 3x3 board of empty squares and returns it.
@@ -21,6 +23,7 @@ def print_board(board):
 
 
 # Stage 2.1 + 2.2 + 3.1 + 3.2: Game turn
+
 def get_move(board, mark):
     """
     Asks the player for a square (1-9), validates the input,
@@ -50,6 +53,7 @@ def get_move(board, mark):
 
 
 # Stage 2.3 + 2.4 + 3.3: Check who win
+
 def check_winner(board, mark):
     """
     Checks all 8 possible lines. Returns True if the mark won, otherwise False.
@@ -72,7 +76,9 @@ def check_winner(board, mark):
 
     return False
 
+
 # Stage 3.4: Check if the board is full
+
 def is_board_full(board):
     """
     Returns True if every square on the board is already taken.
@@ -84,6 +90,7 @@ def is_board_full(board):
 
 
 # Play again?
+
 def ask_play_again():
     """
     Asks "play again?", returns True or False.
@@ -98,6 +105,7 @@ def ask_play_again():
 
 
 # Play
+
 def play_round():
     board = init_board()
     print_board(board)
@@ -132,5 +140,6 @@ while True:
     if not ask_play_again():
         print("Thanks for playing!")
         break
+
 
 # STOP
