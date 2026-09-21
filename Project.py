@@ -72,7 +72,7 @@ def check_winner(board, mark):
     return target in lines
 
 
-# Step 3.4: Check if the board is full
+# Stage 3.4: Check if the board is full
 def is_board_full(board):
     """
     Returns True if every square on the board is already taken.
