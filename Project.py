@@ -54,24 +54,23 @@ def check_winner(board, mark):
     """
     Checks all 8 possible lines. Returns True if the mark won, otherwise False.
     """
-    lines = [
-        # 3 Rows
-        [board[0][0], board[0][1], board[0][2]],
-        [board[1][0], board[1][1], board[1][2]],
-        [board[2][0], board[2][1], board[2][2]],
-        # 3 Columns
-        [board[0][0], board[1][0], board[2][0]],
-        [board[0][1], board[1][1], board[2][1]],
-        [board[0][2], board[1][2], board[2][2]],
-        # 2 Diagonals
-        [board[0][0], board[1][1], board[2][2]],
-        [board[0][2], board[1][1], board[2][0]]
-    ]
+    # 1. Check Rows
+    for row in board:
+        if all(cell == mark for cell in row):
+            return True
 
-    target = [mark, mark, mark]
-    return target in lines
+    # 2. Check Columns
+    for col in range(3):
+        if all(board[row][col] == mark for row in range(3)):
+            return True
 
+    # 3. Check Diagonals
+    if all(board[i][i] == mark for i in range(3)):
+        return True
+    if all(board[i][2 - i] == mark for i in range(3)):
+        return True
 
+    return False
 # Stage 3.4: Check if the board is full
 def is_board_full(board):
     """
